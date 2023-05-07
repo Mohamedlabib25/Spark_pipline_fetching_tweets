@@ -1,4 +1,4 @@
-# Spark_streaming_pipline_to_UCL_Clubs
+# Spark_streaming_pipline_UCL_Clubs
  the project involves building a pipeline to collect and process data from Twitter using Python, (HDFS), Hive, and Spark. A Python script fetches tweets from the Twitter API, pushes them to a port, and stores them in HDFS. The data is then parsed, transformed, and partitioned. HiveQL queries extract dimensions and SparkSQL is used for aggregations
  
  ![image](https://user-images.githubusercontent.com/132618266/236665004-cfe62e93-e5a8-42a9-a70e-b6cb74d8b651.png)
