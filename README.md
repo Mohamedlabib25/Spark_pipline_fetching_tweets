@@ -23,7 +23,7 @@ Here are some examples of the JSON objects that are fetched from the Twitter API
  
  
 The final output is a sum of the tweets' measures and the count of tweets for each club from the four chosen ones, grouped by year, month, day, and hour.
-
+ here is a sample from the fact table 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/132618266/236658007-d2ec98a8-a8a7-4a19-ba4d-0623986d9a96.png" alt="image" />
 </div>
