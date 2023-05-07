@@ -1,4 +1,3 @@
-drop table tweets;
 CREATE EXTERNAL TABLE IF NOT EXISTS tweets(
   id STRING,
   text STRING,
@@ -11,7 +10,6 @@ STORED AS PARQUET
 LOCATION '/twitter-landing-data';
 MSCK REPAIR TABLE tweets;
 
-drop table club_raw;
 CREATE EXTERNAL TABLE IF NOT EXISTS club_raw (
   id STRING,
    club STRING,
