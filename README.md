@@ -10,33 +10,7 @@
   and my final output would be like 
   measuring the tweets' measures and the count of tweets for each of the 4 clubs with also grouping by the year, month, day , hour 
   
- hive> select * from **club_processed**;
-Real Madrid     27894.6         39      2023    4       30      23
-Manchester City 11467.6         14      2023    4       30      23
-AC Milan        8411.6          13      2023    4       30      23
-Inter Milan     2998.0          5       2023    4       30      23
-Real Madrid     1021564.4       796     2023    5       5       23
-AC Milan        198357.0        224     2023    5       5       23
-Manchester City 94100.6         109     2023    5       5       23
-Inter Milan     67602.0         88      2023    5       5       23
- 
- here is the schema for thee **fact table**
+![image](https://user-images.githubusercontent.com/132618266/236658007-d2ec98a8-a8a7-4a19-ba4d-0623986d9a96.png)
 
-hive> describe club_processed;
-OK
-club                    string                                      
-total_tweets_value       double                                      
-number_of_tweets        bigint                                      
-year                    int                                         
-month                   int                                         
-day                     int                                         
-hour                    int                                         
-# Partition Information          
-# col_name              data_type               comment             
-year                    int                                         
-month                   int                                         
-day                     int                                         
-hour                    int                        
- 
  
  
