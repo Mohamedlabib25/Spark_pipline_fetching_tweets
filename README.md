@@ -1,5 +1,8 @@
 # Spark_streaming_pipline_to_processed_data
  the project involves building a pipeline to collect and process data from Twitter using Python, (HDFS), Hive, and Spark. A Python script fetches tweets from the Twitter API, pushes them to a port, and stores them in HDFS. The data is then parsed, transformed, and partitioned. HiveQL queries extract dimensions and SparkSQL is used for aggregations
+ 
+ ![image](https://user-images.githubusercontent.com/132618266/236665004-cfe62e93-e5a8-42a9-a70e-b6cb74d8b651.png)
+
  This pipline is about fetching tweets from twitter using a python script  01_continous_listener.py , it runs all the time and sends the data into a port . it fetches twitter using  a list of keywords which i choose to be the names of the 4 clubs in the champions league 
  and their adjacent most famous hashtags, i want to know which clubs has the largest measures for tweets ( retweet_count,reply_count,like_count,quote_count,impression_count) also i wanted which is the most club people talk about it.
  in brief i wanted to stream data from twitter API which and sending it like here is some  examples for some jason objects i asked twitter API for it 
