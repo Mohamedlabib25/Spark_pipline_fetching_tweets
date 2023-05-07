@@ -85,7 +85,7 @@ df = df.withColumn("text", trim(df["text"]))
 
 # Define the list of words you want to filter in the text column
 words = [ "madrid","realmadrid","halamadrid","RMCF", "Manchester","ManchesteCity","MCFC","ManCity","ManCity",
-                  "intermilan","inter","ForzaInter","Internazionale","FCIM" ,"InterMilano","ac","AcMilan","Rossoneri","ForzaMilan","ACM"]
+                  "intermilan","inter","ForzaInter","Internazionale","FCIM" ,"InterMilano","AcMilan","Rossoneri","ForzaMilan","ACM"]
 
 # Define a UDF to extract words from text
 def extract_words(text):
