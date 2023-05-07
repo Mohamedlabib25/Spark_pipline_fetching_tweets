@@ -60,8 +60,8 @@ def connect_to_endpoint(url, headers, params, next_token = None):
 bearer_token = auth()
 headers = create_headers(bearer_token)
 keyword="real madrid OR HalaMadrid OR Manchester City OR Cityzens OR Inter MILAN OR intermilan OR ForzaInter OR AC Milan OR ForzaMilan"
-start_time = "2023-04-30T00:00:00.000Z"
-end_time = "2023-05-01T00:00:00.000Z"
+start_time = "2023-05-05T00:00:00.000Z"
+end_time = "2023-05-06T00:00:00.000Z"
 max_results = 100
 url = create_url(keyword, start_time, end_time, max_results)
 
