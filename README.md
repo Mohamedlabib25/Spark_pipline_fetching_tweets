@@ -59,19 +59,19 @@ The final output is a sum of the tweets' measures and the count of tweets for ea
 - 	Also you will need to create a Hive Table  `“tweets” ` on top if this directory to be used later in the pipeline.
 ## Landing To Raw ETL
 
--	Here i run some HiveQL queries stored as tables.sql Scripts to extract the dimensions from the landing data.
--	Dimensions can be “tweet-text (id, text)”, “users (id, name)”, etc… Be Creative…
--	The output dimension is stored under a directory called “/twitter-raw-data” and 
--	I have in this pipeline only one dimension  “club-raw”  (id STRING,   club STRING,     tweet_value DOUBLE) PARTITIONED BY (year INT, month INT, day INT, hour INT))  , from my point of view I don’t any other dimensions for my goals in this project , I   tried to get info about the place but it seems that twitter API doesn’t support that.
--	Here I used ‘case when’ to replace the words array with the names of the club adjacent to this word and I used explode to convert the array to rows .
+-	Here i run some HiveQL queries stored as tables.sql Scripts to extract the dimension from `tweets`.
+-	
+-	The output dimension is stored under a directory called `“/twitter-raw-data”` and 
+-	I have in this pipeline only one dimension  `“club-raw”`  `(id STRING,   club STRING,     tweet_value DOUBLE) PARTITIONED BY (year INT, month INT, day INT, hour INT))`  , from my point of view I don’t any other dimensions for my goals in this project , I   tried to get info about the place but it seems that twitter API doesn’t support that.
+-	Here I used `‘case when’` to replace the words array with the names of the club adjacent to this word and I used `explode` to convert the array to rows .
 
 ##  Raw To Processed ETL
 
--	Here, the aggregations to create the final club_processed is going to be created it is created by grouping by club, year, month, day and hour 
--	I used a SparkSQL application for this step.
--	The fact table  contains number_of_tweets which is the count of the tweets at a specific point in time, sum of tweet_value  total_tweet_value
--	The output fact table should be stored under a directory called “twitter-processed-data” .
--	I used  .saveAsTable  to Store the output table should be created directly from the inside of the Spark App.
+-	Here, the aggregations to create the final `club_processed` is going to be created it is created by `grouping by club, year, month, day and hour `
+-	I used a `SparkSQL` application for this step.
+-	The fact table  contains `number_of_tweets` which is the count of the tweets at a specific point in time, sum of tweet_value  `total_tweet_value`
+-	The output fact table should be stored under a directory called `“twitter-processed-data”` .
+-	I used  `.saveAsTable`  to Store the output table should be created directly from the inside of the Spark App.
 
 
 
