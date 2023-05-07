@@ -25,15 +25,15 @@ SET hive.exec.dynamic.partition.mode=nonstrict;
 INSERT   OVERWRITE TABLE  club_raw PARTITION(year, month, day, hour)
 SELECT DISTINCT  id,
        CASE 
-           WHEN LOWER(word) IN ("real", "madrid", "realmadrid", "halamadrid", "rmcf", "#halamadrid") THEN 'Real Madrid' 
-           WHEN LOWER(word) IN ("manchester", "city", "manchestecity", "mcfc", "mancity", "#mancity") THEN 'Manchester City'
-           WHEN LOWER(word) IN ("inter","intermilan" ,"internazionale", "#forzainter", "intermilano") THEN 'Inter Milan'
-           WHEN LOWER(word) IN ("ac", "acmilan", "rossoneri", "#forzamilan", "acm") THEN 'AC Milan'
+           WHEN LOWER(word) IN ("madrid", "realmadrid", "halamadrid", "rmcf", "#halamadrid") THEN 'Real Madrid' 
+           WHEN LOWER(word) IN ("manchester", "manchestecity", "mcfc", "mancity", "#mancity") THEN 'Manchester City'
+           WHEN LOWER(word) IN ("inter","intermilan" , "#forzainter", "intermilano") THEN 'Inter Milan'
+           WHEN LOWER(word) IN ("acmilan", "rossoneri", "#forzamilan", "acm") THEN 'AC Milan'
            
        END AS club ,tweet_value, year, month, day, hour
 FROM tweets
 LATERAL VIEW explode(words) wordsTable AS word
-WHERE LOWER(word) IN ("real", "madrid", "realmadrid", "halamadrid", "rmcf", "#halamadrid", 
-               "manchester", "city", "manchestecity", "mcfc", "mancity", "#mancity", 
-               "inter", "intermilan", "internazionale", "#forzainter", "intermilano", 
-               "ac", "acmilan", "rossoneri", "#forzamilan", "acm");
+WHERE LOWER(word) IN ( "madrid", "realmadrid", "halamadrid", "rmcf", "#halamadrid", 
+               "manchester", "manchestecity", "mcfc", "mancity", "#mancity", 
+               "inter", "intermilan", "#forzainter", "intermilano", 
+                "acmilan", "rossoneri", "#forzamilan", "acm");
