@@ -23,7 +23,7 @@ SET hive.exec.dynamic.partition.mode=nonstrict;
 INSERT   OVERWRITE TABLE  club_raw PARTITION(year, month, day, hour)
 SELECT DISTINCT  id,
        CASE 
-           WHEN LOWER(word) IN ("madrid", "realmadrid", "halamadrid", "rmcf", "#halamadrid") THEN 'Real Madrid' 
+           WHEN LOWER(word) IN ("real madrid", "realmadrid", "halamadrid", "rmcf", "#halamadrid") THEN 'Real Madrid' 
            WHEN LOWER(word) IN ("manchester", "manchestecity", "mcfc", "mancity", "#mancity") THEN 'Manchester City'
            WHEN LOWER(word) IN ("inter","intermilan" , "#forzainter", "intermilano") THEN 'Inter Milan'
            WHEN LOWER(word) IN ("acmilan", "rossoneri", "#forzamilan", "acm") THEN 'AC Milan'
